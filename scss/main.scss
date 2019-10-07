@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro&display=swap');
+$ff-source-sans-pro: 'Source Sans Pro', sans-serif;
+$ff-open-sans: 'Open Sans', sans-serif;
+
+h1 {
+  font-size: 0;
+}
+
+p {
+  font-family: $ff-open-sans;
+}
+
+h2, h3 {
+  font-family: $ff-source-sans-pro;
+  font-weight: 600;
+}
+
+div img {
+    width: 100%;
+}
+
+.logo {
+  width: 200px;
+  max-width: 40%;
+}
+
+.video-index {
+  max-width: 720px;
+  margin: 0 auto;
+
+  video {
+    width: 100%;
+  }
+}
+
+.videowrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+}
+
+.videowrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+// Projects
+
+.project {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    max-width: 1080px;
+    margin: 0 auto;
+
+    .project__img {
+        width: 50%;
+    }
+
+    .project__description {
+        width: 40%;
+        font-size: 14px;
+    }
+}
+
+.arrow-down {
+    position: fixed;
+    bottom: 5%;
+    width: 100px;
+    left: 50%;
+    margin-left: -50px;
+}
+
+.carousel-model-2050 {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.carousel-graduation-collection {
+    max-width: 500px;
+}
+
+.carousel-illustrations {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    .project {
+        flex-flow: column nowrap;
+        
+        .project__img,
+        .project__description {
+            width: 100%;
+        }
+    }
+
+    .carousel-illustrations {
+      max-width: 90%;
+    }
+}
