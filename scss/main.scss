@@ -1,22 +1,34 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro&display=swap');
-$ff-source-sans-pro: 'Source Sans Pro', sans-serif;
-$ff-open-sans: 'Open Sans', sans-serif;
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Exo|Noto+Serif|Saira+Condensed|Titillium+Web&display=swap");
+
+$ff-source-sans-pro: "Source Sans Pro", sans-serif;
+$ff-open-sans: "Open Sans", sans-serif;
+
+$ff-titillium: "Titillium Web", sans-serif;
+$ff-noto: "Noto Serif", serif;
+$ff-saira: "Saira Condensed", sans-serif;
+$ff-exo: "Exo", sans-serif;
 
 h1 {
   font-size: 0;
 }
 
 p {
-  font-family: $ff-open-sans;
+  font-family: $ff-titillium;
 }
 
-h2, h3 {
+h2,
+h3 {
   font-family: $ff-source-sans-pro;
   font-weight: 600;
 }
 
 div img {
-    width: 100%;
+  width: 100%;
+}
+
+header {
+  margin: 0.5% 1%;
 }
 
 .logo {
@@ -49,40 +61,182 @@ div img {
   border: 0;
 }
 
-// Projects
+// Index
+
+.index {
+  background: #fff url("../img/homepage-bg.jpg") repeat-y center top;
+  background-size: cover;
+}
+
+.enter {
+  margin: 0 auto;
+  max-width: 1080px;
+  height: 100vh;
+  margin-top: 49vh;
+
+  a {
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    // &::before {
+    //   content: "";
+    //   z-index: -1;
+    //   width: 100%;
+    //   height: 100%;
+    //   position: absolute;
+    //   background: -moz-radial-gradient(
+    //     center,
+    //     ellipse cover,
+    //     rgba(255, 255, 255, 1) 0%,
+    //     rgba(255, 255, 255, 0.9) 34%,
+    //     rgba(255, 255, 255, 0.82) 61%,
+    //     rgba(255, 255, 255, 0.81) 64%,
+    //     rgba(255, 255, 255, 0.32) 86%,
+    //     rgba(255, 255, 255, 0) 100%
+    //   );
+    //   background: -webkit-gradient(
+    //     radial,
+    //     center center,
+    //     0px,
+    //     center center,
+    //     100%,
+    //     color-stop(0%, rgba(255, 255, 255, 1)),
+    //     color-stop(34%, rgba(255, 255, 255, 0.9)),
+    //     color-stop(61%, rgba(255, 255, 255, 0.82)),
+    //     color-stop(64%, rgba(255, 255, 255, 0.81)),
+    //     color-stop(86%, rgba(255, 255, 255, 0.32)),
+    //     color-stop(100%, rgba(255, 255, 255, 0))
+    //   );
+    //   background: -webkit-radial-gradient(
+    //     center,
+    //     ellipse cover,
+    //     rgba(255, 255, 255, 1) 0%,
+    //     rgba(255, 255, 255, 0.9) 34%,
+    //     rgba(255, 255, 255, 0.82) 61%,
+    //     rgba(255, 255, 255, 0.81) 64%,
+    //     rgba(255, 255, 255, 0.32) 86%,
+    //     rgba(255, 255, 255, 0) 100%
+    //   );
+    //   background: -o-radial-gradient(
+    //     center,
+    //     ellipse cover,
+    //     rgba(255, 255, 255, 1) 0%,
+    //     rgba(255, 255, 255, 0.9) 34%,
+    //     rgba(255, 255, 255, 0.82) 61%,
+    //     rgba(255, 255, 255, 0.81) 64%,
+    //     rgba(255, 255, 255, 0.32) 86%,
+    //     rgba(255, 255, 255, 0) 100%
+    //   );
+    //   background: -ms-radial-gradient(
+    //     center,
+    //     ellipse cover,
+    //     rgba(255, 255, 255, 1) 0%,
+    //     rgba(255, 255, 255, 0.9) 34%,
+    //     rgba(255, 255, 255, 0.82) 61%,
+    //     rgba(255, 255, 255, 0.81) 64%,
+    //     rgba(255, 255, 255, 0.32) 86%,
+    //     rgba(255, 255, 255, 0) 100%
+    //   );
+    //   background: radial-gradient(
+    //     ellipse at center,
+    //     rgba(255, 255, 255, 1) 0%,
+    //     rgba(255, 255, 255, 0.9) 34%,
+    //     rgba(255, 255, 255, 0.82) 61%,
+    //     rgba(255, 255, 255, 0.81) 64%,
+    //     rgba(255, 255, 255, 0.32) 86%,
+    //     rgba(255, 255, 255, 0) 100%
+    //   );
+    //   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
+    // }
+  }
+}
+
+// Posts
+
+.post {
+  margin: 1% auto;
+  padding: 0px 6%;
+  max-width: 1080px;
+
+  section:last-of-type {
+    margin-bottom: 100px;
+  }
+  section:not(:last-of-type) {
+  margin-bottom: 50px;
+}
+}
+
 
 .project {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    max-width: 1080px;
-    margin: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  max-width: 1080px;
+  margin: 0 auto;
 
-    .project__img {
-        width: 50%;
-    }
+  .project__img {
+    width: 46%;
+  }
 
-    .project__description {
-        width: 40%;
-        font-size: 14px;
+  .project__description {
+    width: 46%;
+    font-size: 14px;
+    position: relative;
+    div {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      overflow: auto;
     }
+  }
+}
+
+.wrapper {
+  display: flex;
+  width: 200px;
+}
+.left,
+.right {
+  outline: 1px solid red;
+  width: 50%;
+}
+.right {
+  position: relative;
+}
+.scrollable {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
 }
 
 .arrow-down {
-    position: fixed;
-    bottom: 5%;
-    width: 100px;
-    left: 50%;
-    margin-left: -50px;
+  position: fixed;
+  bottom: 5%;
+  width: 100px;
+  left: 50%;
+  margin-left: -50px;
+}
+
+.slick-arrow {
+  display: none !important;
 }
 
 .carousel-model-2050 {
-    max-width: 720px;
-    margin: 0 auto;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
 .carousel-graduation-collection {
-    max-width: 500px;
+  max-width: 500px;
 }
 
 .carousel-illustrations {
@@ -91,16 +245,25 @@ div img {
 }
 
 @media screen and (max-width: 768px) {
-    .project {
-        flex-flow: column nowrap;
-        
-        .project__img,
-        .project__description {
-            width: 100%;
-        }
+  .enter {
+    a {
+      width: 100%;
     }
+  }
+  .project {
+    flex-flow: column nowrap;
 
-    .carousel-illustrations {
-      max-width: 90%;
+    .project__img,
+    .project__description {
+      width: 100%;
+
+      div {
+        position: initial;
+      }
     }
+  }
+
+  .carousel-illustrations {
+    max-width: 90%;
+  }
 }

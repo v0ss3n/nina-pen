@@ -1,3 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro&display=swap");
+.overview-page {
+  background: #fff url("../img/overview-bg.jpg") repeat-y center top;
+  background-size: cover;
+}
+
+.overview__block a {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  color: black;
+}
+
 .overview {
   display: flex;
   flex-flow: row wrap;
@@ -10,7 +22,50 @@
   width: 30%;
   margin: 1%;
 }
-.overview .overview__block--hover {
+.overview .overview__block:hover:first-of-type img, .overview .overview__block:focus:first-of-type img {
+  animation: spin 2s linear infinite;
+}
+.overview .overview__block:hover:nth-of-type(2) img, .overview .overview__block:focus:nth-of-type(2) img {
+  animation: spin 2s linear infinite;
+}
+.overview .overview__block:hover:nth-of-type(3) img, .overview .overview__block:focus:nth-of-type(3) img {
+  animation: spin 2s linear infinite;
+}
+.overview .overview__block:hover:nth-of-type(4) img, .overview .overview__block:focus:nth-of-type(4) img {
+  animation: spin 2s linear infinite;
+}
+.overview .overview__block:hover:nth-of-type(5) img, .overview .overview__block:focus:nth-of-type(5) img {
+  animation: spin 2s linear infinite;
+}
+.overview .overview__block:hover:nth-of-type(6) img, .overview .overview__block:focus:nth-of-type(6) img {
+  animation: spin 1s linear infinite;
+}
+
+.marquee {
+  position: fixed;
+  width: 100vw;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  transform: rotate(30deg);
+}
+
+.marquee > * {
+  display: inline-block;
+  width: 100%;
+  padding-left: 100%;
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+.overview__block--hover {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -21,19 +76,26 @@
   opacity: 0;
   transition: 0.5s ease;
 }
-.overview .overview__block--hover h3 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-.overview .overview__block--hover:hover, .overview .overview__block--hover:focus {
+.overview__block--hover:hover, .overview__block--hover:focus {
   opacity: 1;
 }
 
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 @media screen and (max-width: 768px) {
   .overview .overview__block {
     width: 48%;

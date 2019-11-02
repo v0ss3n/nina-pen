@@ -1,3 +1,21 @@
+// Overview
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro&display=swap");
+
+$ff-source-sans-pro: "Source Sans Pro", sans-serif;
+
+.overview-page {
+  background: #fff url("../img/overview-bg.jpg") repeat-y center top;
+  background-size: cover;
+}
+
+.overview__block {
+  a {
+    font-family: $ff-source-sans-pro;
+    font-weight: 600;
+    color: black;
+  }
+}
+
 .overview {
   display: flex;
   flex-flow: row wrap;
@@ -9,33 +27,103 @@
     position: relative;
     width: 30%;
     margin: 1%;
+
+    &:hover:first-of-type img,
+    &:focus:first-of-type img{
+      animation: spin 2s linear infinite;
+    }
+
+    &:hover:nth-of-type(2) img,
+    &:focus:nth-of-type(2) img {
+      animation: spin 2s linear infinite;
+    }
+
+    &:hover:nth-of-type(3) img,
+    &:focus:nth-of-type(3) img {
+      animation: spin 2s linear infinite;
+    }
+
+    &:hover:nth-of-type(4) img,
+    &:focus:nth-of-type(4) img {
+      animation: spin 2s linear infinite;
+    }
+
+    &:hover:nth-of-type(5) img,
+    &:focus:nth-of-type(5) img {
+      animation: spin 2s linear infinite;
+    }
+
+    &:hover:nth-of-type(6) img,
+    &:focus:nth-of-type(6) img {
+
+      animation: spin 1s linear infinite;
+    }
   }
+}
 
-  .overview__block--hover {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: 0.5s ease;
+.marquee {
+  position: fixed;
+  width: 100vw;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  transform: rotate(30deg);
+}
 
-    h3 {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
+.marquee > * {
+  display: inline-block;
+  width: 100%;
+  padding-left: 100%;
+  animation: marquee 10s linear infinite;
+}
 
-    &:hover,
-    &:focus {
-      opacity: 1;
-    }
+@keyframes marquee {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
+}
+
+.overview__block--hover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+
+  // h3 {
+  //   position: absolute;
+  //   top: 90%;
+  //   left: 50%;
+  //   width: 100%;
+  //   -webkit-transform: translate(-50%, -50%);
+  //   -ms-transform: translate(-50%, -50%);
+  //   transform: translate(-50%, -50%);
+  //   text-align: center;
+  // }
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 

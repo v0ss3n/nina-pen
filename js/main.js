@@ -18,4 +18,3 @@ $(".carousel-model-2050").slick({
     autoplay: true,
     autoplaySpeed: 3000
   });  
-  
