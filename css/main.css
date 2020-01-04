@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Exo|Noto+Serif|Saira+Condensed|Titillium+Web&display=swap");
+body {
+  overflow-x: hidden;
+}
+
 h1 {
   font-size: 0;
 }
@@ -18,6 +22,14 @@ div img {
   width: 100%;
 }
 
+section {
+  padding: 5% 0;
+}
+
+section:first-of-type {
+  padding: 0 0 5% 0;
+}
+
 header {
   margin: 1%;
   display: flex;
@@ -29,14 +41,6 @@ header {
 .logo {
   width: 200px;
   max-width: 40%;
-}
-
-.video-index {
-  max-width: 720px;
-  margin: 0 auto;
-}
-.video-index video {
-  width: 100%;
 }
 
 .videowrapper {
@@ -65,6 +69,11 @@ header {
   background-size: cover;
 }
 
+.print-design {
+  background: #fff url("../img/Print-Design/7.jpg") repeat-y center top;
+  background-size: cover;
+}
+
 .enter {
   margin: 0 auto;
   max-width: 1080px;
@@ -79,6 +88,56 @@ header {
   -moz-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
+}
+
+.index-menu__item {
+  height: inherit;
+  width: 100vw;
+  position: absolute;
+  z-index: -1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.index-menu {
+  background: none;
+  height: 1000px;
+  align-content: center;
+  max-width: 100vw;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+}
+.index-menu img {
+  display: flex;
+  align-self: flex-start;
+  width: 25%;
+}
+
+.index-menu__item--hover {
+  z-index: 1;
+}
+
+.index-menu__item--hover:hover,
+.index-menu__item--hover:focus {
+  cursor: pointer;
+}
+
+.index-menu__item--hover1:hover + .index-menu__item,
+.index-menu__item--hover1:focus + .index-menu__item {
+  background-image: url("../img/menu-about-bg.jpg");
+}
+
+.index-menu__item--hover2:hover + .index-menu__item,
+.index-menu__item--hover2:focus + .index-menu__item {
+  background-image: url("../img/menu-art-bg.jpg");
+}
+
+.index-menu__item--hover3:hover + .index-menu__item,
+.index-menu__item--hover3:focus + .index-menu__item {
+  background-image: url("../img/menu-prints-bg.jpg");
 }
 
 .post {
@@ -99,6 +158,8 @@ header {
   justify-content: space-between;
   max-width: 1080px;
   margin: 0 auto;
+  transform: skew(-7deg, -7deg);
+  border: 8px black double;
 }
 .project .project__img {
   width: 46%;
@@ -107,6 +168,7 @@ header {
   width: 46%;
   font-size: 14px;
   position: relative;
+  background: white;
 }
 .project .project__description div {
   position: absolute;
@@ -115,6 +177,31 @@ header {
   top: 0;
   bottom: 0;
   overflow: auto;
+}
+
+.images {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.images .images__carousel {
+  background: white;
+  border: 4px #ff6262 solid;
+  transform: skew(3deg, 1deg);
+  box-shadow: -4px 3px 9px 1px #ff6262;
+  width: 100%;
+}
+.images .carousel-model-2050-2 {
+  width: 40%;
+  transform: skew(1deg, 3deg);
+}
+.images .carousel-residents {
+  width: 55%;
+}
+.images .carousel-residents2 {
+  width: 40%;
 }
 
 .wrapper {
@@ -149,10 +236,63 @@ header {
   margin-left: -50px;
 }
 
-.slick-arrow {
-  display: none !important;
+.slick-prev,
+.slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 60px;
+  height: 30px;
+  padding: 0;
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
 }
 
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  color: transparent;
+  outline: none;
+}
+
+.slick-prev {
+  left: -25px;
+  background: url("../img/prev.png") no-repeat center;
+  background-size: contain;
+  z-index: 2;
+  animation: slick 2s reverse infinite;
+}
+
+.slick-next {
+  right: 25px;
+  background: url("../img/next.png") no-repeat center;
+  background-size: contain;
+  animation: slick 2s linear infinite;
+}
+
+@keyframes slick {
+  0% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(-20px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  70% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 .carousel-model-2050 {
   max-width: 1080px;
   margin: 0 auto;
@@ -162,11 +302,257 @@ header {
   max-width: 500px;
 }
 
-.carousel-illustrations {
-  max-width: 50%;
-  margin: 0 auto;
+.carousel-illustrations-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.carousel-illustrations-wrapper .carousel-illustrations,
+.carousel-illustrations-wrapper .carousel-prints {
+  width: 40%;
+  transform: skew(10deg, 10deg);
+  border: 15px double pink;
+  background: white;
+}
+.carousel-illustrations-wrapper .carousel-illustrations2,
+.carousel-illustrations-wrapper .carousel-prints2 {
+  width: 40%;
+  transform: skew(-10deg, -10deg);
+  border: 15px double pink;
+  background: white;
 }
 
+.color {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+}
+.color img {
+  width: 50%;
+}
+
+.speedo img:hover {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.back-to-overview {
+  width: 20%;
+  height: auto;
+  max-width: 120px;
+  margin: 0 auto;
+}
+.back-to-overview img {
+  animation: spin 4s linear infinite;
+}
+.back-to-overview img:hover, .back-to-overview img:focus {
+  animation: expand 8s linear infinite;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes expand {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(24) rotate(360deg);
+  }
+}
+
+.next-section {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  padding: 0;
+}
+.next-section a {
+  max-width: 100px;
+  height: auto;
+  width: 20%;
+  margin: 0 0 20px auto;
+  display: block;
+  animation: bounce 2s linear infinite;
+}
+.next-section img {
+  width: 100%;
+}
+
+.helicopter {
+  background: white url("../img/Helikopter/helikopter-bg.jpg") no-repeat center;
+}
+
+.marquee--rotated {
+  transform: rotate(30deg);
+}
+.marquee--rotated .helicopter-img {
+  width: 40%;
+  margin-top: -20%;
+}
+
+.marquee > * {
+  display: inline-block;
+  width: 100%;
+  padding-left: 100%;
+  animation: marquee 6s linear infinite;
+}
+
+.overview-grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+.overview-grid img {
+  width: 20%;
+}
+.overview-grid .overview-grid--full {
+  width: 100%;
+}
+
+.overview-grid-2 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.overview-grid-2 img {
+  width: 40%;
+  padding-bottom: 4%;
+}
+
+.overview-grid-3 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.overview-grid-3 img {
+  width: 30%;
+}
+
+.center-row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.center-row .about-portrait {
+  width: 50%;
+  max-width: 600px;
+}
+
+.cv {
+  width: 80%;
+}
+
+.show,
+.book {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.show .collection-description,
+.book .collection-description {
+  width: 40%;
+  padding: 6%;
+  background: white url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.stitchpiecenpurl.com%2Fwp-content%2Fuploads%2F2016%2F01%2FEmbroidery-Hoops.jpg&f=1&nofb=1) no-repeat scroll top;
+  background-size: contain;
+  text-align: center;
+}
+.show .carousel-collection,
+.show .book__video,
+.book .carousel-collection,
+.book .book__video {
+  width: 60%;
+  padding-right: 5%;
+}
+
+.prints-button {
+  margin-top: -20%;
+}
+.prints-button a {
+  justify-content: flex-end;
+}
+.prints-button .prints-button__img {
+  animation: shake 2s linear infinite;
+}
+.prints-button:hover .prints-button__img, .prints-button:focus .prints-button__img {
+  animation: pulse 3s linear infinite;
+}
+
+.jessica-nap {
+  background: green url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F31.media.tumblr.com%2Fc6f32dd41335a65cf96dcd2a46ceb5a8%2Ftumblr_n8duz4nAIw1r3h6rqo1_500.gif&f=1&nofb=1) no-repeat fixed center;
+  background-size: cover;
+}
+
+.shoes {
+  background: white;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  10%, 90% {
+    transform: scale(1.2) translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: scale(1.6) translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: scale(1.1) translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: scale(1.4) translate3d(4px, 0, 0);
+  }
+}
 @media screen and (max-width: 768px) {
   .enter a {
     width: 100%;
@@ -174,6 +560,8 @@ header {
 
   .project {
     flex-flow: column nowrap;
+    transform: initial;
+    border: none;
   }
   .project .project__img,
 .project .project__description {
@@ -184,8 +572,37 @@ header {
     position: initial;
   }
 
-  .carousel-illustrations {
-    max-width: 90%;
+  .show {
+    width: 100%;
+    flex-flow: row wrap;
+  }
+  .show .collection-description,
+.show .carousel-collection {
+    width: 100%;
+  }
+  .show figure:nth-of-type(1),
+.show section:nth-of-type(1) {
+    width: 100%;
+  }
+  .show section:nth-of-type(1) {
+    width: 100%;
+    position: initial;
+    margin: auto;
+  }
+  .show figure:nth-of-type(2n) {
+    box-shadow: none;
+  }
+
+  .show .carousel-collection {
+    padding: 0;
+  }
+
+  .slick-next {
+    right: 0px;
+  }
+
+  .slick-prev {
+    left: 20px;
   }
 }
 

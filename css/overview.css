@@ -41,30 +41,6 @@
   animation: spin 1s linear infinite;
 }
 
-.marquee {
-  position: fixed;
-  width: 100vw;
-  white-space: nowrap;
-  overflow: hidden;
-  box-sizing: border-box;
-  transform: rotate(30deg);
-}
-
-.marquee > * {
-  display: inline-block;
-  width: 100%;
-  padding-left: 100%;
-  animation: marquee 10s linear infinite;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-100%, 0);
-  }
-}
 .overview__block--hover {
   position: absolute;
   top: 0;

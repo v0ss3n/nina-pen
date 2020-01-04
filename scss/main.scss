@@ -9,6 +9,9 @@ $ff-noto: "Noto Serif", serif;
 $ff-saira: "Saira Condensed", sans-serif;
 $ff-exo: "Exo", sans-serif;
 
+body {
+  overflow-x: hidden;
+}
 h1 {
   font-size: 0;
 }
@@ -27,6 +30,14 @@ div img {
   width: 100%;
 }
 
+section {
+  padding: 5% 0;
+}
+
+section:first-of-type {
+  padding: 0 0 5% 0;
+}
+
 header {
   margin: 1%;
   display: flex;
@@ -38,15 +49,6 @@ header {
 .logo {
   width: 200px;
   max-width: 40%;
-}
-
-.video-index {
-  max-width: 720px;
-  margin: 0 auto;
-
-  video {
-    width: 100%;
-  }
 }
 
 .videowrapper {
@@ -79,6 +81,11 @@ header {
   background-size: cover;
 }
 
+.print-design {
+  background: #fff url("../img/Print-Design/7.jpg") repeat-y center top;
+  background-size: cover;
+}
+
 .enter {
   margin: 0 auto;
   max-width: 1080px;
@@ -93,77 +100,53 @@ header {
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    // &::before {
-    //   content: "";
-    //   z-index: -1;
-    //   width: 100%;
-    //   height: 100%;
-    //   position: absolute;
-    //   background: -moz-radial-gradient(
-    //     center,
-    //     ellipse cover,
-    //     rgba(255, 255, 255, 1) 0%,
-    //     rgba(255, 255, 255, 0.9) 34%,
-    //     rgba(255, 255, 255, 0.82) 61%,
-    //     rgba(255, 255, 255, 0.81) 64%,
-    //     rgba(255, 255, 255, 0.32) 86%,
-    //     rgba(255, 255, 255, 0) 100%
-    //   );
-    //   background: -webkit-gradient(
-    //     radial,
-    //     center center,
-    //     0px,
-    //     center center,
-    //     100%,
-    //     color-stop(0%, rgba(255, 255, 255, 1)),
-    //     color-stop(34%, rgba(255, 255, 255, 0.9)),
-    //     color-stop(61%, rgba(255, 255, 255, 0.82)),
-    //     color-stop(64%, rgba(255, 255, 255, 0.81)),
-    //     color-stop(86%, rgba(255, 255, 255, 0.32)),
-    //     color-stop(100%, rgba(255, 255, 255, 0))
-    //   );
-    //   background: -webkit-radial-gradient(
-    //     center,
-    //     ellipse cover,
-    //     rgba(255, 255, 255, 1) 0%,
-    //     rgba(255, 255, 255, 0.9) 34%,
-    //     rgba(255, 255, 255, 0.82) 61%,
-    //     rgba(255, 255, 255, 0.81) 64%,
-    //     rgba(255, 255, 255, 0.32) 86%,
-    //     rgba(255, 255, 255, 0) 100%
-    //   );
-    //   background: -o-radial-gradient(
-    //     center,
-    //     ellipse cover,
-    //     rgba(255, 255, 255, 1) 0%,
-    //     rgba(255, 255, 255, 0.9) 34%,
-    //     rgba(255, 255, 255, 0.82) 61%,
-    //     rgba(255, 255, 255, 0.81) 64%,
-    //     rgba(255, 255, 255, 0.32) 86%,
-    //     rgba(255, 255, 255, 0) 100%
-    //   );
-    //   background: -ms-radial-gradient(
-    //     center,
-    //     ellipse cover,
-    //     rgba(255, 255, 255, 1) 0%,
-    //     rgba(255, 255, 255, 0.9) 34%,
-    //     rgba(255, 255, 255, 0.82) 61%,
-    //     rgba(255, 255, 255, 0.81) 64%,
-    //     rgba(255, 255, 255, 0.32) 86%,
-    //     rgba(255, 255, 255, 0) 100%
-    //   );
-    //   background: radial-gradient(
-    //     ellipse at center,
-    //     rgba(255, 255, 255, 1) 0%,
-    //     rgba(255, 255, 255, 0.9) 34%,
-    //     rgba(255, 255, 255, 0.82) 61%,
-    //     rgba(255, 255, 255, 0.81) 64%,
-    //     rgba(255, 255, 255, 0.32) 86%,
-    //     rgba(255, 255, 255, 0) 100%
-    //   );
-    //   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
-    // }
   }
+}
+
+.index-menu__item {
+  height: inherit;
+  width: 100vw;
+  position: absolute;
+  z-index: -1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.index-menu {
+  background: none;
+  height: 1000px;
+  align-content: center;
+  max-width: 100vw;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+
+  img {
+    display: flex;
+    align-self: flex-start;
+    width: 25%;
+  }
+}
+
+.index-menu__item--hover {
+  z-index: 1;
+}
+.index-menu__item--hover:hover,
+.index-menu__item--hover:focus {
+  cursor: pointer;
+}
+.index-menu__item--hover1:hover + .index-menu__item,
+.index-menu__item--hover1:focus + .index-menu__item {
+  background-image: url("../img/menu-about-bg.jpg");
+}
+.index-menu__item--hover2:hover + .index-menu__item,
+.index-menu__item--hover2:focus + .index-menu__item {
+  background-image: url("../img/menu-art-bg.jpg");
+}
+.index-menu__item--hover3:hover + .index-menu__item,
+.index-menu__item--hover3:focus + .index-menu__item {
+  background-image: url("../img/menu-prints-bg.jpg");
 }
 
 // Posts
@@ -177,10 +160,9 @@ header {
     margin-bottom: 100px;
   }
   section:not(:last-of-type) {
-  margin-bottom: 50px;
+    margin-bottom: 50px;
+  }
 }
-}
-
 
 .project {
   display: flex;
@@ -188,6 +170,8 @@ header {
   justify-content: space-between;
   max-width: 1080px;
   margin: 0 auto;
+  transform: skew(-7deg, -7deg);
+  border: 8px black double;
 
   .project__img {
     width: 46%;
@@ -197,6 +181,8 @@ header {
     width: 46%;
     font-size: 14px;
     position: relative;
+    background: white;
+
     div {
       position: absolute;
       left: 0;
@@ -205,6 +191,35 @@ header {
       bottom: 0;
       overflow: auto;
     }
+  }
+}
+
+.images {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-evenly;
+
+  .images__carousel {
+    background: white;
+    border: 4px #ff6262 solid;
+    transform: skew(3deg, 1deg);
+    box-shadow: -4px 3px 9px 1px #ff6262;
+    width: 100%;
+  }
+
+  .carousel-model-2050-2 {
+    width: 40%;
+    transform: skew(1deg, 3deg);
+  }
+
+  .carousel-residents {
+    width: 55%;
+  }
+
+  .carousel-residents2 {
+    width: 40%;
   }
 }
 
@@ -237,8 +252,64 @@ header {
   margin-left: -50px;
 }
 
-.slick-arrow {
-  display: none !important;
+.slick-prev,
+.slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 60px;
+  height: 30px;
+  padding: 0;
+
+  transform: translate(0, -50%);
+
+  cursor: pointer;
+
+  color: transparent;
+  border: none;
+  outline: none;
+}
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  color: transparent;
+  outline: none;
+}
+
+.slick-prev {
+  left: -25px;
+  background: url("../img/prev.png") no-repeat center;
+  background-size: contain;
+  z-index: 2;
+  animation: slick 2s reverse infinite;
+}
+
+.slick-next {
+  right: 25px;
+  background: url("../img/next.png") no-repeat center;
+  background-size: contain;
+  animation: slick 2s linear infinite;
+}
+
+@keyframes slick {
+  0% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(-20px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  70% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .carousel-model-2050 {
@@ -250,9 +321,312 @@ header {
   max-width: 500px;
 }
 
-.carousel-illustrations {
-  max-width: 50%;
+// Distorted carousels
+
+.carousel-illustrations-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  .carousel-illustrations,
+  .carousel-prints {
+    width: 40%;
+    transform: skew(10deg, 10deg);
+    border: 15px double pink;
+    background: white;
+  }
+
+  .carousel-illustrations2,
+  .carousel-prints2 {
+    width: 40%;
+    transform: skew(-10deg, -10deg);
+    border: 15px double pink;
+    background: white;
+  }
+}
+
+.carousel-prints {
+}
+
+.color {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+
+  img {
+    width: 50%;
+  }
+}
+
+.speedo {
+  img:hover {
+    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+}
+
+// back to overview
+
+.back-to-overview {
+  width: 20%;
+  height: auto;
+  max-width: 120px;
   margin: 0 auto;
+  img {
+    animation: spin 4s linear infinite;
+
+    &:hover,
+    &:focus {
+      animation: expand 8s linear infinite;
+    }
+  }
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes expand {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(24) rotate(360deg);
+    }
+  }
+}
+
+.next-section {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  padding: 0;
+  a {
+    max-width: 100px;
+    height: auto;
+    width: 20%;
+    margin: 0 0 20px auto;
+    display: block;
+    animation: bounce 2s linear infinite;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+// Helicopter
+.helicopter {
+  background: white url("../img/Helikopter/helikopter-bg.jpg") no-repeat center;
+}
+
+// Marquee
+
+.marquee--rotated {
+  transform: rotate(30deg);
+
+  .helicopter-img {
+    width: 40%;
+    margin-top: -20%;
+  }
+}
+
+.marquee > * {
+  display: inline-block;
+  width: 100%;
+  padding-left: 100%;
+  animation: marquee 6s linear infinite;
+}
+
+// Grids and rows
+
+.overview-grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: flex-end;
+
+  img {
+    width: 20%;
+  }
+
+  .overview-grid--full {
+    width: 100%;
+  }
+}
+
+.overview-grid-2 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+
+  img {
+    width: 40%;
+    padding-bottom: 4%;
+  }
+}
+
+.overview-grid-3 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+
+  img {
+    width: 30%;
+  }
+}
+
+.center-row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-start;
+
+  .about-portrait {
+    width: 50%;
+    max-width: 600px;
+  }
+}
+
+// About
+
+.cv {
+  width: 80%;
+}
+
+// Fashion
+
+.show,
+.book {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  .collection-description {
+    width: 40%;
+    padding: 6%;
+    background: white
+      url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.stitchpiecenpurl.com%2Fwp-content%2Fuploads%2F2016%2F01%2FEmbroidery-Hoops.jpg&f=1&nofb=1)
+      no-repeat scroll top;
+    background-size: contain;
+    text-align: center;
+  }
+
+  .carousel-collection,
+  .book__video {
+    width: 60%;
+    padding-right: 5%;
+  }
+}
+
+.prints-button {
+  margin-top: -20%;
+
+  a {
+    justify-content: flex-end;
+  }
+  .prints-button__img {
+    animation: shake 2s linear infinite;
+  }
+  &:hover .prints-button__img,
+  &:focus .prints-button__img {
+    animation: pulse 3s linear infinite;
+  }
+}
+
+.jessica-nap {
+  background: green
+    url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F31.media.tumblr.com%2Fc6f32dd41335a65cf96dcd2a46ceb5a8%2Ftumblr_n8duz4nAIw1r3h6rqo1_500.gif&f=1&nofb=1)
+    no-repeat fixed center;
+  background-size: cover;
+}
+
+// Prints
+
+.shoes {
+  background: white;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  10%,
+  90% {
+    transform: scale(1.2) translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: scale(1.6) translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: scale(1.1) translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: scale(1.4) translate3d(4px, 0, 0);
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -263,6 +637,8 @@ header {
   }
   .project {
     flex-flow: column nowrap;
+    transform: initial;
+    border: none;
 
     .project__img,
     .project__description {
@@ -274,7 +650,38 @@ header {
     }
   }
 
-  .carousel-illustrations {
-    max-width: 90%;
+  .show {
+    width: 100%;
+    flex-flow: row wrap;
+
+    .collection-description,
+    .carousel-collection {
+      width: 100%;
+    }
+
+    figure:nth-of-type(1),
+    section:nth-of-type(1) {
+      width: 100%;
+    }
+    section:nth-of-type(1) {
+      width: 100%;
+      position: initial;
+      margin: auto;
+    }
+
+    figure:nth-of-type(2n) {
+      box-shadow: none;
+    }
+  }
+
+  .show .carousel-collection {
+    padding: 0;
+  }
+  .slick-next {
+    right: 0px;
+  }
+
+  .slick-prev {
+    left: 20px;
   }
 }
