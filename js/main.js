@@ -1,3 +1,102 @@
+//   function toggleVisibility1() {
+//     var x = document.getElementById("look1");
+//   if (x.style.display === "none") {
+//     x.style.display = "block";
+//   } else {
+//     x.style.display = "none";
+//   }
+// }
+
+//   function toggleVisibility2() {
+//     var x = document.getElementById("look1");
+//   if (x.style.display === "none") {
+//     x.style.display = "block";
+//   } else {
+//     x.style.display = "none";
+//   }
+// }
+
+//   function toggleVisibility3() {
+//     var x = document.getElementById("look1");
+//   if (x.style.display === "none") {
+//     x.style.display = "block";
+//   } else {
+//     x.style.display = "none";
+//   }
+// }
+
+//   function toggleVisibility4() {
+//     var x = document.getElementById("look1");
+//   if (x.style.display === "none") {
+//     x.style.display = "block";
+//   } else {
+//     x.style.display = "none";
+//   }
+// }
+
+//   function toggleVisibility5() {
+//     var x = document.getElementById("look1");
+//   if (x.style.display === "none") {
+//     x.style.display = "block";
+//   } else {
+//     x.style.display = "none";
+//   }
+// }
+
+// function toggleVisibility6() {
+//   var x = document.getElementById("look1");
+// if (x.style.display === "none") {
+//   x.style.display = "block";
+// } else {
+//   x.style.display = "none";
+// }
+// }
+
+// function toggleVisibility7() {
+//   var x = document.getElementById("look1");
+// if (x.style.display === "none") {
+//   x.style.display = "block";
+// } else {
+//   x.style.display = "none";
+// }
+// }
+
+// function toggleVisibility8() {
+//   var x = document.getElementById("look9");
+// if (x.style.display === "none") {
+//   x.style.display = "block";
+// } else {
+//   x.style.display = "none";
+// }
+// }
+
+// function toggleVisibility9() {
+//   var x = document.getElementById("look9");
+// if (x.style.display === "none") {
+//   x.style.display = "block";
+// } else {
+//   x.style.display = "none";
+// }
+// }
+
+// function toggleVisibility10() {
+//   var x = document.getElementById("look10");
+// if (x.style.display === "none") {
+//   x.style.display = "block";
+// } else {
+//   x.style.display = "none";
+// }
+// }
+
+// function toggleVisibility11() {
+//   var x = document.getElementById("look11");
+// if (x.style.display === "none") {
+//   x.style.display = "block";
+// } else {
+//   x.style.display = "none";
+// }
+// }
+
   $(".carousel-model-2050").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -19,18 +118,15 @@
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    arrows: false,
-    adaptiveHeight: true
-  });    
+    arrows: false
+    });    
   
   $(".carousel-residents2").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    arrows: false,
-    adaptiveHeight: true
-
+    arrows: false
   });  
 
   $(".carousel-illustrations").slick({
@@ -81,6 +177,13 @@
     arrows: false
   });  
 
+  $(".carousel-squares").slick({
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    autoplay: true,
+    verticalSwiping: true,
+    autoplaySpeed: 1500
+  });  
   
 "use strict";
 
@@ -98,6 +201,34 @@ var update = function update() {
 
 update();
 
+
+(function(){
+  'use strict';
+
+  class Menu {
+    constructor(settings) {
+      this.menuNode = settings.menuNode;
+    }
+    
+    toggleMenuState(className) {      
+      if (typeof className !== 'string' || className.length === 0) {
+        return console.log('you did not give the class for toggleState function');
+      } 
+      return  this.menuNode.classList.toggle(className);
+    }
+  }
+
+  const jsMenuNode = document.querySelector('.menu');
+  const demoMenu = new Menu ({
+    menuNode: jsMenuNode
+  });
+  
+  function callMenuToggle(event) {
+    demoMenu.toggleMenuState('menu_activated');
+  }
+  
+  jsMenuNode.querySelector('.menu__hamburger').addEventListener('click', callMenuToggle);
+})();
 
 // // scroll to next section
 
