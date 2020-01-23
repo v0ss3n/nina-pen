@@ -590,6 +590,7 @@ MENU STATES
 
 .slick-track {
   display: flex !important;
+  align-items: flex-start;
 }
 
 .slick-slide {
