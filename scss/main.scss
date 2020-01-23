@@ -12,6 +12,7 @@ $ff-exo: "Exo", sans-serif;
 $c-white: #fff;
 $c-black: #000;
 $c-palepurple: #f3edf9;
+$c-palepurple--transparent: rgba(243, 237, 249, 242);
 $c-babyblue: #acf9ff;
 $c-pink: #ff0179;
 $c-pink--hover: #ae0052;
@@ -176,41 +177,16 @@ body {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .index-menu {
-    display: none;
-  }
-  
-  
-/*
-=====
-DEPENDENCES
-=====
-*/
-
+// Hamburger menu
 /* The component will reset button browser styles */
 
 .r-button{
-  --uirButtonBackgroundColor: var(--rButtonBackgroundColor, transparent);
-  --uirButtonPadding: var(--rButtonPadding, var(--rButtonPaddingTop, 0) var(--rButtonPaddingRight, 0) var(--rButtonPaddingBottom, 0) var(--rButtonPaddingLeft, 0));
-  --uirButtonBorderWidth: var(--rButtonBorderWidth, 0);
-  --uirButtonBorderStyle: var(--rButtonBorderStyle, solid);
-  --uirButtonBorderColor: var(--rButtonBorderColor, currentColor);
-  --uirButtonFontFamily: var(--rButtonFontFamily, inherit);
-  --uirButtonFontSize: var(--rButtonFontSize,  inherit);
-  --uirButtonColor: var(--rButtonColor);
-
-  background-color: var(--uirButtonBackgroundColor);
-  padding: var(--uirButtonPadding);
-
-  border-width: var(--uirButtonBorderWidth);
-  border-style: var(--uirButtonBorderStyle);
-  border-color: var(--uirButtonBorderColor);
-
+  background-color: transparent;
+  padding: 0;
+  border: 0 solid $c-palepurple;
   cursor: pointer;
-
-  font-family: var(--uirButtonFontFamily);
-  font-size: var(--uirButtonFontSize);
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .r-button::-moz-focus-inner,
@@ -227,42 +203,27 @@ DEPENDENCES
 /* The component will reset browser's styles of link */
 
 .r-link{
-    --uirLinkDisplay: var(--rLinkDisplay, inline-flex);
-    --uirLinkTextColor: var(--rLinkTextColor);
-    --uirLinkTextDecoration: var(--rLinkTextDecoration, none);
 
-    display: var(--uirLinkDisplay) !important;
-    color: var(--uirLinkTextColor) !important;
-    text-decoration: var(--uirLinkTextDecoration) !important;
+    display: inline-flex !important;
+    color: $c-pink !important;
+    text-decoration: none !important;
 }
 
 /* The component will reset browser's styles of list */
 
 .r-list{
-    --uirListPaddingLeft: var(--rListPaddingLeft, 0);
-    --uirListMarginTop: var(--rListMarginTop, 0);
-    --uirListMarginBottom: var(--rListMarginBottom, 0);
-    --uirListListStyle: var(--rListListStyle, none);
-
-    padding-left: var(--uirListPaddingLeft) !important;
-    margin-top: var(--uirListMarginTop) !important;
-    margin-bottom: var(--uirListMarginBottom) !important;
-    list-style: var(--uirListListStyle) !important;
+    padding-left: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    list-style: none !important;
 }
 
 /* Basic styles of the hamburger component */
 
 .m-hamburger{
-  --uiHamburgerDisplay: var(--hamburgerDisplay, inline-flex);
-  --uiHamburgerWidth: var(--hamburgerWidth, 28px);
-  --uiHamburgerHeight: var(--hamburgerHeight, 20px);
-  --uiHamburgerThickness: var(--hamburgerThickness, 4px);
-  --uiHamburgerBorderRadius: var(--hamburgerBorderRadius, 5px);
-  --uiHamburgerBgColor: var(--hamburgerBgColor, currentColor);
-
-  display: var(--uiHamburgerDisplay);
-  width: var(--uiHamburgerWidth);
-  height: var(--uiHamburgerHeight);
+  display: inline-flex;
+  width: 28px;
+  height: 20px;
 
   position: relative;
   text-indent: -9999px;
@@ -272,9 +233,9 @@ DEPENDENCES
 .m-hamburger::after, 
 .m-hamburger__label{
   width: 100%;
-  height: var(--uiHamburgerThickness);
-  border-radius: var(--uiHamburgerBorderRadius);
-  background-color: var(--uiHamburgerBgColor);
+  height: 4px;
+  border-radius: 5px;
+  background-color: $c-pink;
 
   position: absolute;
   left: 0;
@@ -296,7 +257,7 @@ DEPENDENCES
 .m-hamburger__label{
   /* The calculation of middle hamburger button line position */
   
-  top: calc(50% - calc(var(--uiHamburgerThickness) / 2));
+  top: calc(50% - calc(2px / 2));
 }
 
 /*
@@ -306,21 +267,11 @@ MENU STYLES
 */
 
 .menu{
-  --uiMenuCircleSize: var(--menuCircleSize, 100px);
-  --uiMenuCircleOffset: var(--menuCircleOffset, 10px);
-  --uiMenuCircleBgColor: var(--menuCircleBgColor, currentColor);
-
-  --hamburgerWidth: var(--menuHamburgerWidth, 28px);
-  --hamburgerHeight: var(--menuHamburgerHeight, 20px);
-  --hamburgerBgColor: var(--menuHamburgerBgColor, #fff);
-
   box-sizing: border-box;
   width: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;  
-
   position: fixed;
   bottom: 0;
   left: 0;
@@ -331,10 +282,8 @@ MENU STYLES
   box-sizing: border-box;
   width: 100%;
   height: 0;
-
   transition: opacity .2s ease-out;
   opacity: 0;
-
   display: flex;
   align-items: flex-end;
   z-index: 2;
@@ -344,19 +293,16 @@ MENU STYLES
   width: 100%;
   max-height: 100%;
   display: none;
-
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 
 .menu__toggle{
   box-sizing: border-box;
-  width: var(--uiMenuCircleSize);
-  height: calc(var(--uiMenuCircleSize) / 2);
-  padding: var(--uiMenuCircleOffset);
-
+  width: 100px;
+  height: 50px;
+  padding: 10px;
   flex: none;
-
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -372,15 +318,12 @@ MENU STYLES
   content: "";
   width: 1em;
   height: 1em;
-  font-size: var(--uiMenuCircleSize); /* 1 */
-
-  background-color: var(--uiMenuCircleBgColor);
+  font-size: 100px; /* 1 */
+  background-color: rgba(243, 237, 249, 242);
   border-radius: 50%;
-
   position: absolute;
   bottom: -.5em; /* 2 */
   left: calc(50% - .5em);
-
   will-change: width, height;
   transition: transform .25s cubic-bezier(0.04, -0.1, 0.29, 0.98),
     width .25s cubic-bezier(0.04, -0.1, 0.29, 0.98),
@@ -466,94 +409,46 @@ MENU STATES
   opacity: 0;
 }
 
-/*
-=====
-SETTINGS
-=====
-*/
-
-:root{
-  --rLinkTextColor: $c-pink;
-  --menuCircleSize: 100px;
-  --menuCircleBgColor: $c-pink;
-  --menuHamburgerWidth: 28px;
-  --menuHamburgerHeight: 20px;
-  --menuHamburgerBgColor: $c-white;
-}
-
-
-@media (max-width: 767px){
-
-  html{
-    font-size: 50%;
-  }
-}
-
 .page__name{
   display: block;
   font-size: 3rem;
   font-weight: 700;
 }
 .menu__group{
-  --rLinkTextColor: var($c-white);
-
-  padding: .5rem 3rem; 
+  padding: .5rem 8rem; 
   font-size: 3.2rem;
   font-weight: 700;
   text-transform: uppercase;
 }
 
+
+@media screen and (min-width: 768px) {
+  .menu {
+    display: none;
+  }
 }
 
-// Doesn't work:
-// .index-menu__item {
-//   height: inherit;
-//   width: 100vw;
-//   z-index: -1;
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   background-size: cover;
+
+@media screen and (max-width: 768px) {
+  .index-menu {
+    display: none;
+  }
+
+  .logo {
+    margin: 0 auto;
+  }
+}
+  @media  screen and (min-width: 768px) and (max-width: 950px) {
+    .index-menu img {
+      height: 31px;
+    }
+  }
+
+//   @media  screen and (min-width: 911px) {
+//   .index-menu .index-menu__item:last-of-type {
+//     margin-right: -2.7%;
 // }
-
-// .index-menu {
-//   background: none;
-//   height: 1000px;
-//   align-content: center;
-//   max-width: 100vw;
-//   position: relative;
-//   margin: 0 auto;
-//   display: flex;
-//   align-items: flex-start;
-//   flex-flow: row wrap;
-
-//   .index-menu__item {
-//     display: flex;
-//    align-items: flex-start;
-//     align-self: flex-start;
-//     width: 25%;
 //   }
-// }
-
-// .index-menu__item--hover {
-//   z-index: 1;
-// }
-// .index-menu__item--hover:hover,
-// .index-menu__item--hover:focus {
-//   cursor: pointer;
-// }
-// .index-menu__item--hover1:hover + .index-menu__item,
-// .index-menu__item--hover1:focus + .index-menu__item {
-//   background-image: url("../img/menu-about-bg.jpg");
-// }
-// .index-menu__item--hover2:hover + .index-menu__item,
-// .index-menu__item--hover2:focus + .index-menu__item {
-//   background-image: url("../img/menu-art-bg.jpg");
-// }
-// .index-menu__item--hover3:hover + .index-menu__item,
-// .index-menu__item--hover3:focus + .index-menu__item {
-//   background-image: url("../img/menu-prints-bg.jpg");
-// }
-
 // Posts
 
 .post {
@@ -633,7 +528,7 @@ SETTINGS
 }
 
 .project__video {
-  margin-top: -10%;
+  margin-top: 1%;
   iframe {
     background: #fff;
     border: 4px #ff6262 solid;
@@ -835,7 +730,6 @@ SETTINGS
 
 .back-to-top {
   width: 20%;
-  height: 200px;
   max-width: 120px;
   margin: 0 auto;
   img {
@@ -1142,6 +1036,11 @@ SETTINGS
 @media screen and (max-width: 768px) {
   .page {
     width: 90%;
+    font-size: 90%;
+  }
+
+  .back-to-top {
+    height: inherit;
   }
 
   .enter {
@@ -1216,7 +1115,7 @@ SETTINGS
       display: none;
     }
     .color__card {
-      height: 53vw;
+      height: 63vw;
     }
   }
 
