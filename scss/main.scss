@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Exo|Noto+Serif|Saira+Condensed|Titillium+Web&display=swap");
+@import url("../ExcaliburNouveau.ttf");
+
+@font-face {
+  font-family: title;
+  src: url("../ExcaliburNouveau.ttf");
+}
 
 $ff-source-sans-pro: "Source Sans Pro", sans-serif;
 $ff-open-sans: "Open Sans", sans-serif;
@@ -8,6 +14,9 @@ $ff-titillium: "Titillium Web", sans-serif;
 $ff-noto: "Noto Serif", serif;
 $ff-saira: "Saira Condensed", sans-serif;
 $ff-exo: "Exo", sans-serif;
+
+$ff-pagetitle: "title";
+$ff-title: $ff-exo;
 
 $c-white: #fff;
 $c-black: #000;
@@ -20,18 +29,70 @@ $c-softpink: #feacff;
 $c-softred: #ff6262;
 $c-green: #8bfe01;
 
+$c-title: $c-pink--hover;
+$c-title--hover: $c-pink;
+
 body {
   overflow-x: hidden;
 }
 
 .page {
-  max-width: 1080px;
+  max-width: 800px;
   width: 80%;
   margin: 0 auto 20%;
 }
 
 h1 {
   font-size: 0;
+}
+
+.title {
+  // text-align: center;
+  margin: 5% 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .shaking-button {
+    width: 20%;
+    margin-top: -2%;
+  }
+  
+  h2 {
+    font-family: $ff-pagetitle;
+    font-size: 3rem;
+    margin: 0;
+    color: $c-title--hover;
+    white-space: nowrap;
+    text-shadow: 1px 1px 0 $c-title, 1px 2px 0 $c-title, 1px 3px 0 $c-title, 1px 4px 0 $c-title,
+      1px 5px 0 $c-title, 1px 6px 0 $c-title, 1px 7px 0 $c-title, 1px 8px 0 $c-title,
+      5px 13px 15px $c-title--hover;
+    //animation: shake 1.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vw;
+  background: #f08080;
+}
+
+.threeD {
+  color: $c-title--hover;
+  white-space: nowrap;
+  transition: 0.3s;
+  text-shadow: 1px 1px 0 $c-title, 1px 2px 0 $c-title, 1px 3px 0 $c-title, 1px 4px 0 $c-title,
+    1px 5px 0 $c-title, 1px 6px 0 $c-title, 1px 7px 0 $c-title, 1px 8px 0 $c-title,
+    5px 13px 15px $c-title--hover;
+}
+
+.threeD:hover {
+  transition: 0.3s;
+  transform: scale(1.1);
+  text-shadow: 1px -1px 0 $c-title, 1px -2px 0 $c-title, 1px -3px 0 $c-title,
+    1px -4px 0 $c-title, 1px -5px 0 $c-title, 1px -6px 0 $c-title, 1px -7px 0 $c-title,
+    1px -8px 0 $c-title, 5px -13px 15px $c-title--hover, 5px -13px 25px $c-palepurple;
 }
 
 p,
@@ -58,7 +119,7 @@ ul li a {
 
 h2,
 h3 {
-  font-family: $ff-source-sans-pro;
+  font-family: $ff-title;
   font-weight: 600;
   margin-top: 0;
 }
@@ -268,7 +329,7 @@ MENU STYLES
 
 .menu{
   box-sizing: border-box;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;  
@@ -527,6 +588,27 @@ MENU STATES
   }
 }
 
+.heads {
+  transform: skew(-3deg, -1deg);
+  box-shadow: 4px 3px 9px 1px $c-softred;
+  border: 4px $c-softred solid;
+  background: white;
+
+}
+.carousel-heads {
+  margin: 0 auto;
+  width: 30vw;
+
+  .slick-slide { 
+    
+  }   
+  .slick-slide {
+  }
+}
+
+.carousel-heads-nav {
+  //margin-top: -10%;
+}
 .project__video {
   margin-top: 1%;
   iframe {
@@ -675,6 +757,29 @@ MENU STATES
   height: inherit !important;
 }
 
+.colorcards {
+  width: 50vw;
+  margin: 0 auto;
+
+  .carousel-looks {
+    max-width: 400px;
+    margin: 0 auto;
+     img {
+      box-shadow: 5px 11px 9px 1px $c-pink;
+
+     }
+  }
+
+  .carousel-looks-nav {
+    height: 200px;
+
+    .slick-slide {
+      height: 28vw;
+      width: auto;
+    }
+  }
+}
+
 .color {
   display: flex;
   align-items: flex-start;
@@ -796,9 +901,9 @@ MENU STATES
 
 .marquee > * {
   display: inline-block;
-  width: 100%;
+  width: 200%;
   padding-left: 100%;
-  animation: marquee 6s linear infinite;
+  animation: marquee 12s linear infinite;
 }
 
 // Grids and rows
@@ -817,6 +922,7 @@ MENU STATES
     width: 100%;
   }
 }
+
 
 .overview-grid-2 {
   display: flex;
@@ -839,6 +945,22 @@ MENU STATES
   img {
     width: 30%;
   }
+}
+
+.overview-grid-4 {
+  display: flex;
+  align-items: flex-start;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  img {
+    width: 25%;
+  }
+
+  .overview-grid--full {
+    width: 100%;
+  }
+
 }
 
 .center-row {
@@ -1062,6 +1184,10 @@ MENU STATES
         position: initial;
       }
     }
+  }
+
+  .post {
+    padding: 0;
   }
 
   .project__video {

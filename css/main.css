@@ -1,17 +1,61 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Exo|Noto+Serif|Saira+Condensed|Titillium+Web&display=swap");
+@import url("../ExcaliburNouveau.ttf");
+@font-face {
+  font-family: title;
+  src: url("../ExcaliburNouveau.ttf");
+}
 body {
   overflow-x: hidden;
 }
 
 .page {
-  max-width: 1080px;
+  max-width: 800px;
   width: 80%;
   margin: 0 auto 20%;
 }
 
 h1 {
   font-size: 0;
+}
+
+.title {
+  margin: 5% 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.title .shaking-button {
+  width: 20%;
+  margin-top: -2%;
+}
+.title h2 {
+  font-family: "title";
+  font-size: 3rem;
+  margin: 0;
+  color: #ff0179;
+  white-space: nowrap;
+  text-shadow: 1px 1px 0 #ae0052, 1px 2px 0 #ae0052, 1px 3px 0 #ae0052, 1px 4px 0 #ae0052, 1px 5px 0 #ae0052, 1px 6px 0 #ae0052, 1px 7px 0 #ae0052, 1px 8px 0 #ae0052, 5px 13px 15px #ff0179;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vw;
+  background: #f08080;
+}
+
+.threeD {
+  color: #ff0179;
+  white-space: nowrap;
+  transition: 0.3s;
+  text-shadow: 1px 1px 0 #ae0052, 1px 2px 0 #ae0052, 1px 3px 0 #ae0052, 1px 4px 0 #ae0052, 1px 5px 0 #ae0052, 1px 6px 0 #ae0052, 1px 7px 0 #ae0052, 1px 8px 0 #ae0052, 5px 13px 15px #ff0179;
+}
+
+.threeD:hover {
+  transition: 0.3s;
+  transform: scale(1.1);
+  text-shadow: 1px -1px 0 #ae0052, 1px -2px 0 #ae0052, 1px -3px 0 #ae0052, 1px -4px 0 #ae0052, 1px -5px 0 #ae0052, 1px -6px 0 #ae0052, 1px -7px 0 #ae0052, 1px -8px 0 #ae0052, 5px -13px 15px #ff0179, 5px -13px 25px #f3edf9;
 }
 
 p,
@@ -39,7 +83,7 @@ ul li a:focus {
 
 h2,
 h3 {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Exo", sans-serif;
   font-weight: 600;
   margin-top: 0;
 }
@@ -218,7 +262,7 @@ MENU STYLES
 */
 .menu {
   box-sizing: border-box;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -453,6 +497,17 @@ MENU STATES
   width: 40%;
 }
 
+.heads {
+  transform: skew(-3deg, -1deg);
+  box-shadow: 4px 3px 9px 1px #ff6262;
+  border: 4px #ff6262 solid;
+  background: white;
+}
+
+.carousel-heads {
+  margin: 0 auto;
+  width: 30vw;
+}
 .project__video {
   margin-top: 1%;
 }
@@ -596,6 +651,25 @@ MENU STATES
   height: inherit !important;
 }
 
+.colorcards {
+  width: 50vw;
+  margin: 0 auto;
+}
+.colorcards .carousel-looks {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.colorcards .carousel-looks img {
+  box-shadow: 5px 11px 9px 1px #ff0179;
+}
+.colorcards .carousel-looks-nav {
+  height: 200px;
+}
+.colorcards .carousel-looks-nav .slick-slide {
+  height: 28vw;
+  width: auto;
+}
+
 .color {
   display: flex;
   align-items: flex-start;
@@ -697,9 +771,9 @@ MENU STATES
 
 .marquee > * {
   display: inline-block;
-  width: 100%;
+  width: 200%;
   padding-left: 100%;
-  animation: marquee 6s linear infinite;
+  animation: marquee 12s linear infinite;
 }
 
 .overview-grid {
@@ -734,6 +808,19 @@ MENU STATES
 }
 .overview-grid-3 img {
   width: 30%;
+}
+
+.overview-grid-4 {
+  display: flex;
+  align-items: flex-start;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.overview-grid-4 img {
+  width: 25%;
+}
+.overview-grid-4 .overview-grid--full {
+  width: 100%;
 }
 
 .center-row {
@@ -915,6 +1002,10 @@ MENU STATES
   .project .project__img div,
 .project .project__description div {
     position: initial;
+  }
+
+  .post {
+    padding: 0;
   }
 
   .project__video {

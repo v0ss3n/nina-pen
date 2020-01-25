@@ -145,6 +145,40 @@
     arrows: false
   });  
 
+  
+ $('.carousel-heads').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  asNavFor: '.carousel-heads-nav'
+});
+
+$('.carousel-heads-nav').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  asNavFor: '.carousel-heads',
+  centerMode: true,
+  focusOnSelect: true
+});
+
+$('.carousel-looks-nav').slick({
+  slidesToShow: 11,
+  slidesToScroll: 1,
+  asNavFor: '.carousel-looks',
+  centerMode: true,
+  arrows: false,
+  focusOnSelect: true
+});
+
+$('.carousel-looks').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  asNavFor: '.carousel-looks-nav'
+});
+
   $(".carousel-prints").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -185,6 +219,21 @@
     autoplaySpeed: 1500
   });  
   
+  var homepageScene = document.getElementById("homepage-scene");
+if (homepageScene) {
+  var homepageParallax = new Parallax(homepageScene);
+}
+
+var aboutScene = document.getElementById("about-scene");
+if (aboutScene) {
+  var aboutParallax = new Parallax(aboutScene);
+}
+
+// var titleScene = document.getElementById("title-scene");
+// if (titleScene) {
+//   var titleParallax = new Parallax(titleScene);
+// }
+
 "use strict";
 
 var section = document.querySelector('.skew-scroll');
