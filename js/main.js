@@ -203,6 +203,13 @@ $(".carousel-prints3").slick({
   arrows: true
 });
 
+$(".carousel-shoot").slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3500,
+  arrows: false
+});
 
 $(".carousel-collection").slick({
   slidesToShow: 2,

@@ -851,9 +851,10 @@ MENU STATES
   }
 
   .color__card {
-    height: 28vw;
+    height: 26vw;
     width: auto;
     position: relative;
+    max-height: 282px;
 
     &:hover + .color__look,
     &:focus + .color__look {
@@ -1055,7 +1056,7 @@ MENU STATES
   align-items: flex-start;
   flex-flow: row nowrap;
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: center;
 
   .collection-description {
     flex-flow: column nowrap;
@@ -1070,7 +1071,7 @@ MENU STATES
 }
 
 .shaking-button {
-  margin-top: -20%;
+  margin-top: -14%;
 
   a {
     align-items: center;
@@ -1080,6 +1081,10 @@ MENU STATES
   h2 {
     color: $c-palepurple;
     text-shadow: 6px 9px 18px $c-ballpointblue, 1px 2px 0 $c-ballpointblue, 1px 3px 0 $c-ballpointblue--hover;;
+  }
+
+  .project {
+    padding: 4% 5% 5% 4%;  
   }
 
   .shaking-button__img {
@@ -1101,6 +1106,9 @@ MENU STATES
 }
 
 .jessica-nap {
+  .credits {
+    padding: 10px;
+  }
 }
 
 .hover-grid .overview-grid {
@@ -1317,17 +1325,6 @@ MENU STATES
   .helicopter {
     .project {
       flex-flow: row wrap;
-    }
-  }
-
-  .color {
-    flex-flow: row wrap;
-
-    .color__look {
-      display: none;
-    }
-    .color__card {
-      height: 63vw;
     }
   }
 
