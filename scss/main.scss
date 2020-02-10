@@ -70,16 +70,19 @@ body.loaded .page {
   max-width: 900px;
   height: auto;
   z-index: 1500;
-  transform: translate(-50%,-50%);
-  animation: loader 5s ease-in-out infinite;
+  transform: translate(-50%, -50%);
+
+  img {
+    animation: loader 5s ease-in-out infinite;
+  }
 }
 
 @keyframes loader {
   0% {
-    transform: translate(-50%,-50%) scale(1);
+    transform: scale(1);
   }
   100% {
-    transform: translate(-50%,-50%) scale(10) rotate(360deg);
+    transform: scale(10) rotate(360deg);
   }
 }
 
@@ -103,10 +106,10 @@ h1 {
 
 .title {
   // text-align: center;
-  margin: 5% 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  margin: 1% 0 2%;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: flex-start;
 
   .shaking-button {
     width: 20%;
@@ -115,15 +118,15 @@ h1 {
 
   h2 {
     font-family: $ff-pagetitle;
-    font-size: 3rem;
+    font-size: 2rem;
     margin: 0;
     color: $c-title--hover;
     white-space: nowrap;
     text-shadow: 1px 1px 0 $c-title, 1px 2px 0 $c-title, 1px 3px 0 $c-title, 1px 4px 0 $c-title, 1px 5px 0 $c-title,
       1px 6px 0 $c-title, 1px 7px 0 $c-title, 1px 8px 0 $c-title, 5px 13px 15px $c-title--hover;
-      letter-spacing: 2px;
-      text-transform: lowercase;
-    animation: shake 2s 5s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+    letter-spacing: 2px;
+    animation: shake 3s 5s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+    text-align: center;
   }
 }
 
@@ -140,14 +143,6 @@ body {
   transition: 0.3s;
   text-shadow: 1px 1px 0 $c-title, 1px 2px 0 $c-title, 1px 3px 0 $c-title, 1px 4px 0 $c-title, 1px 5px 0 $c-title,
     1px 6px 0 $c-title, 1px 7px 0 $c-title, 1px 8px 0 $c-title, 5px 13px 15px $c-title--hover;
-}
-
-.threeD:hover {
-  transition: 0.3s;
-  transform: scale(1.1);
-  text-shadow: 1px -1px 0 $c-title, 1px -2px 0 $c-title, 1px -3px 0 $c-title, 1px -4px 0 $c-title, 1px -5px 0 $c-title,
-    1px -6px 0 $c-title, 1px -7px 0 $c-title, 1px -8px 0 $c-title, 5px -13px 15px $c-title--hover,
-    5px -13px 25px $c-palepurple;
 }
 
 p,
