@@ -229,10 +229,13 @@ if (aboutScene) {
   var aboutParallax = new Parallax(aboutScene);
 }
 
-// var titleScene = document.getElementById("title-scene");
-// if (titleScene) {
-//   var titleParallax = new Parallax(titleScene);
-// }
+$(document).ready(function() {
+ 
+  setTimeout(function(){
+      $('body').addClass('loaded');
+  }, 1000);
+
+});
 
 "use strict";
 

@@ -10,9 +10,61 @@ body {
 }
 
 .page {
+  visibility: hidden;
+}
+
+body.loaded .page {
+  visibility: initial;
+}
+
+.page {
   max-width: 800px;
   width: 80%;
   margin: 0 auto 20%;
+}
+
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: #fff;
+}
+
+#loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 80%;
+  max-width: 900px;
+  height: auto;
+  z-index: 1500;
+  transform: translate(-50%, -50%);
+  animation: loader 5s ease-in-out infinite;
+}
+
+@keyframes loader {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(10) rotate(360deg);
+  }
+}
+.loaded #loader-wrapper {
+  opacity: 0;
+  transition: all 0.3s 0.6s ease-out;
+}
+
+.loaded #loader-wrapper {
+  visibility: hidden;
+}
+
+.no-js #loader-wrapper {
+  display: none;
 }
 
 h1 {
@@ -36,6 +88,9 @@ h1 {
   color: #ff0179;
   white-space: nowrap;
   text-shadow: 1px 1px 0 #ae0052, 1px 2px 0 #ae0052, 1px 3px 0 #ae0052, 1px 4px 0 #ae0052, 1px 5px 0 #ae0052, 1px 6px 0 #ae0052, 1px 7px 0 #ae0052, 1px 8px 0 #ae0052, 5px 13px 15px #ff0179;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+  animation: shake 2s 5s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
 }
 
 body {
@@ -107,7 +162,6 @@ header {
   justify-content: space-between;
   flex-flow: row nowrap;
   align-items: center;
-  border-bottom: 7px double #f3edf9;
 }
 
 .logo {
@@ -318,7 +372,7 @@ MENU STYLES
   position: absolute;
   bottom: -0.5em;
   /* 2 */
-  left: calc(50% - .5em);
+  left: calc(50% - 0.5em);
   will-change: width, height;
   transition: transform 0.25s cubic-bezier(0.04, -0.1, 0.29, 0.98), width 0.25s cubic-bezier(0.04, -0.1, 0.29, 0.98), height 0.25s cubic-bezier(0.04, -0.1, 0.29, 0.98);
 }
@@ -451,7 +505,7 @@ MENU STATES
   max-width: 1080px;
   margin: 0 auto;
   transform: skew(-7deg, -7deg);
-  border: 8px black double;
+  border: 8px #3b29a6 double;
   background: #fff;
 }
 .project .project__img {
@@ -889,11 +943,6 @@ MENU STATES
   right: 2%;
 }
 
-.jessica-nap {
-  background: green url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F31.media.tumblr.com%2Fc6f32dd41335a65cf96dcd2a46ceb5a8%2Ftumblr_n8duz4nAIw1r3h6rqo1_500.gif&f=1&nofb=1) no-repeat fixed center;
-  background-size: cover;
-}
-
 .hover-grid .overview-grid {
   background: #fff;
 }
@@ -984,6 +1033,14 @@ MENU STATES
 
   .back-to-top {
     height: inherit;
+  }
+
+  .color {
+    display: none;
+  }
+
+  .colorcards {
+    display: initial;
   }
 
   .enter a {
