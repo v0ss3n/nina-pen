@@ -195,6 +195,15 @@ $(".carousel-prints2").slick({
   arrows: false
 });
 
+$(".carousel-prints3").slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2500,
+  arrows: true
+});
+
+
 $(".carousel-collection").slick({
   slidesToShow: 2,
   slidesToScroll: 2,

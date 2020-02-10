@@ -38,11 +38,11 @@ body.loaded .page {
   position: relative;
   left: 50%;
   top: 50%;
+  transform: translate(-50%, -50%);
   width: 80%;
   max-width: 900px;
   height: auto;
   z-index: 1500;
-  transform: translate(-50%, -50%);
 }
 #loader img {
   animation: loader 5s ease-in-out infinite;
@@ -73,8 +73,12 @@ h1 {
   font-size: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 .title {
-  margin: 1% 0 2%;
+  margin: 1% 0 3%;
 }
 .title .shaking-button {
   width: 20%;
@@ -84,12 +88,21 @@ h1 {
   font-family: "title";
   font-size: 2rem;
   margin: 0;
-  color: #ff0179;
+  color: #c4005c;
   white-space: nowrap;
-  text-shadow: 1px 1px 0 #ae0052, 1px 2px 0 #ae0052, 1px 3px 0 #ae0052, 1px 4px 0 #ae0052, 1px 5px 0 #ae0052, 1px 6px 0 #ae0052, 1px 7px 0 #ae0052, 1px 8px 0 #ae0052, 5px 13px 15px #ff0179;
+  text-shadow: 1px 1px 0 #ff0179, 1px 2px 0 #ff0179, 1px 3px 0 #ff0179, 1px 4px 0 #ff0179, 1px 5px 0 #ff0179, 1px 6px 0 #ff0179, 1px 7px 0 #ff0179, 1px 8px 0 #ff0179, 5px 13px 15px #c4005c;
   letter-spacing: 2px;
   animation: shake 3s 5s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
   text-align: center;
+}
+
+a h2 {
+  font-family: "title";
+  font-size: 2rem;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  color: #f3edf9;
+  text-shadow: 6px 9px 18px #3b29a6, 1px 2px 0 #3b29a6, 1px 3px 0 #281b77;
 }
 
 body {
@@ -97,13 +110,6 @@ body {
   padding: 0;
   height: 100vw;
   background: #f08080;
-}
-
-.threeD {
-  color: #ff0179;
-  white-space: nowrap;
-  transition: 0.3s;
-  text-shadow: 1px 1px 0 #ae0052, 1px 2px 0 #ae0052, 1px 3px 0 #ae0052, 1px 4px 0 #ae0052, 1px 5px 0 #ae0052, 1px 6px 0 #ae0052, 1px 7px 0 #ae0052, 1px 8px 0 #ae0052, 5px 13px 15px #ff0179;
 }
 
 p,
@@ -126,7 +132,7 @@ ul li a {
 ul li:hover, ul li:focus,
 ul li a:hover,
 ul li a:focus {
-  color: #ae0052;
+  color: #c4005c;
 }
 
 h2,
@@ -478,8 +484,6 @@ MENU STATES
 }
 .post {
   margin: 1% auto;
-  padding: 0px 6%;
-  max-width: 1080px;
 }
 .post:first-of-type {
   margin-top: 4%;
@@ -491,26 +495,33 @@ MENU STATES
   margin-bottom: 50px;
 }
 
-.project {
+.project,
+.fdfa,
+.credit {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  max-width: 1080px;
   margin: 0 auto;
   transform: skew(-7deg, -7deg);
   border: 8px #3b29a6 double;
   background: #fff;
 }
-.project .project__img {
+.project .project__img,
+.fdfa .project__img,
+.credit .project__img {
   width: 46%;
 }
-.project .project__description {
+.project .project__description,
+.fdfa .project__description,
+.credit .project__description {
   width: 46%;
   font-size: 14px;
   position: relative;
   padding: 4% 4% 0 0;
 }
-.project .project__description div {
+.project .project__description div,
+.fdfa .project__description div,
+.credit .project__description div {
   position: absolute;
   left: 0;
   right: 0;
@@ -520,13 +531,25 @@ MENU STATES
   padding: 8% 8% 0 0;
 }
 
+.credit {
+  justify-content: center;
+  margin: 9% 0;
+}
+.credit .link {
+  animation: shake 2s linear infinite;
+}
+
+.fdfa {
+  padding: 0;
+}
+
 .images {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-flow: row wrap;
   width: 100%;
-  align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin-bottom: 3.5%;
 }
 .images .images__carousel {
   background: #fff;
@@ -563,6 +586,10 @@ MENU STATES
   border: 4px #ff6262 solid;
   transform: skew(3deg, 1deg);
   box-shadow: -4px 3px 9px 1px #ff6262;
+}
+
+.project__video + .title {
+  margin-top: 5%;
 }
 
 .project__video--2 {
@@ -699,6 +726,7 @@ MENU STATES
 }
 
 .colorcards {
+  display: none;
   width: 50vw;
   margin: 0 auto;
 }
@@ -919,7 +947,12 @@ MENU STATES
   margin-top: -20%;
 }
 .shaking-button a {
-  justify-content: flex-end;
+  align-items: center;
+  text-decoration: none;
+}
+.shaking-button h2 {
+  color: #f3edf9;
+  text-shadow: 6px 9px 18px #3b29a6, 1px 2px 0 #3b29a6, 1px 3px 0 #281b77;
 }
 .shaking-button .shaking-button__img {
   animation: shake 2s linear infinite;
@@ -950,16 +983,15 @@ MENU STATES
   box-shadow: 5px 10px 10px #feacff;
 }
 
-.shoes {
-  background: #fff;
+.hover-grid .overview-grid {
+  align-items: center;
+}
+.hover-grid .overview-grid img {
+  width: 23%;
 }
 
-.carousel-squares img {
-  box-shadow: 5px 10px 10px #feacff;
-}
-.carousel-squares img:hover,
-.carousel-squares img:focus {
-  transform: scale(2.5);
+.shoes {
+  background: #fff;
 }
 
 @keyframes marquee {
@@ -1019,6 +1051,16 @@ MENU STATES
   }
 }
 @media screen and (max-width: 768px) {
+  h2,
+a h2,
+.title h2 {
+    font-size: 1.2rem;
+  }
+
+  .title h2 {
+    text-shadow: none;
+  }
+
   .page {
     width: 90%;
     font-size: 90%;
@@ -1026,6 +1068,10 @@ MENU STATES
 
   .back-to-top {
     height: inherit;
+  }
+
+  .hover-grid .overview-grid img {
+    width: 31%;
   }
 
   .color {

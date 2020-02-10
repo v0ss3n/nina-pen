@@ -24,14 +24,15 @@ $c-palepurple: #f3edf9;
 $c-palepurple--transparent: rgba(243, 237, 249, 242);
 $c-babyblue: #acf9ff;
 $c-pink: #ff0179;
-$c-pink--hover: #ae0052;
+$c-pink--hover: #c4005c;
 $c-softpink: #feacff;
 $c-softred: #ff6262;
 $c-green: #8bfe01;
 $c-ballpointblue: #3b29a6;
+$c-ballpointblue--hover: #281b77;
 
-$c-title: $c-pink--hover;
-$c-title--hover: $c-pink;
+$c-title: $c-pink;
+$c-title--hover: $c-pink--hover;
 
 body {
   overflow-x: hidden;
@@ -66,11 +67,11 @@ body.loaded .page {
   position: relative;
   left: 50%;
   top: 50%;
+  transform: translate(-50%, -50%);
   width: 80%;
   max-width: 900px;
   height: auto;
   z-index: 1500;
-  transform: translate(-50%, -50%);
 
   img {
     animation: loader 5s ease-in-out infinite;
@@ -104,12 +105,12 @@ h1 {
   font-size: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 .title {
-  // text-align: center;
-  margin: 1% 0 2%;
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: flex-start;
+  margin: 1% 0 3%;
 
   .shaking-button {
     width: 20%;
@@ -130,19 +131,20 @@ h1 {
   }
 }
 
+a h2 {
+  font-family: $ff-pagetitle;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  color: $c-palepurple;
+  text-shadow: 6px 9px 18px $c-ballpointblue, 1px 2px 0 $c-ballpointblue, 1px 3px 0 $c-ballpointblue--hover;;
+}
+
 body {
   margin: 0;
   padding: 0;
   height: 100vw;
   background: #f08080;
-}
-
-.threeD {
-  color: $c-title--hover;
-  white-space: nowrap;
-  transition: 0.3s;
-  text-shadow: 1px 1px 0 $c-title, 1px 2px 0 $c-title, 1px 3px 0 $c-title, 1px 4px 0 $c-title, 1px 5px 0 $c-title,
-    1px 6px 0 $c-title, 1px 7px 0 $c-title, 1px 8px 0 $c-title, 5px 13px 15px $c-title--hover;
 }
 
 p,
@@ -558,8 +560,6 @@ MENU STATES
 
 .post {
   margin: 1% auto;
-  padding: 0px 6%;
-  max-width: 1080px;
 
   &:first-of-type {
     margin-top: 4%;
@@ -573,11 +573,12 @@ MENU STATES
   }
 }
 
-.project {
+.project,
+.fdfa,
+.credit {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  max-width: 1080px;
   margin: 0 auto;
   transform: skew(-7deg, -7deg);
   border: 8px $c-ballpointblue double;
@@ -605,13 +606,25 @@ MENU STATES
   }
 }
 
+.credit {
+  justify-content: center;
+  margin: 9% 0;
+  .link {
+    animation: shake 2s linear infinite;
+  }
+}
+
+.fdfa {
+  padding: 0;
+}
+
 .images {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-flow: row wrap;
   width: 100%;
-  align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin-bottom: 3.5%;
 
   .images__carousel {
     background: $c-white;
@@ -659,6 +672,10 @@ MENU STATES
     transform: skew(3deg, 1deg);
     box-shadow: -4px 3px 9px 1px #ff6262;
   }
+}
+
+.project__video + .title {
+  margin-top: 5%;
 }
 
 .project__video--2 {
@@ -800,6 +817,7 @@ MENU STATES
 }
 
 .colorcards {
+  display: none;
   width: 50vw;
   margin: 0 auto;
 
@@ -1055,7 +1073,13 @@ MENU STATES
   margin-top: -20%;
 
   a {
-    justify-content: flex-end;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  h2 {
+    color: $c-palepurple;
+    text-shadow: 6px 9px 18px $c-ballpointblue, 1px 2px 0 $c-ballpointblue, 1px 3px 0 $c-ballpointblue--hover;;
   }
 
   .shaking-button__img {
@@ -1099,6 +1123,14 @@ MENU STATES
   }
 }
 
+.hover-grid .overview-grid {
+  align-items: center;
+
+  img {
+    width: 23%;
+  }
+}
+
 // Prints
 
 .shoes {
@@ -1107,11 +1139,6 @@ MENU STATES
 
 .carousel-squares {
   img {
-    box-shadow: 5px 10px 10px $c-softpink;
-  }
-  img:hover,
-  img:focus {
-    transform: scale(2.5);
   }
 }
 
@@ -1192,6 +1219,15 @@ MENU STATES
 }
 
 @media screen and (max-width: 768px) {
+  h2,
+  a h2,
+  .title h2 {
+    font-size: 1.2rem;
+  }
+
+  .title h2 {
+    text-shadow: none;
+  }
   .page {
     width: 90%;
     font-size: 90%;
@@ -1199,6 +1235,12 @@ MENU STATES
 
   .back-to-top {
     height: inherit;
+  }
+
+  .hover-grid .overview-grid {
+    img {
+      width: 31%;
+    }
   }
 
   .color {
