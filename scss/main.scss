@@ -530,13 +530,13 @@ MENU STATES
   text-transform: uppercase;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .menu {
     display: none;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .index-menu {
     display: none;
   }
@@ -545,6 +545,7 @@ MENU STATES
     margin: 0 auto;
   }
 }
+
 @media screen and (min-width: 768px) and (max-width: 950px) {
   .index-menu img {
     height: 31px;

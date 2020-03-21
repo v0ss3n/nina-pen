@@ -463,12 +463,12 @@ MENU STATES
   text-transform: uppercase;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .menu {
     display: none;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .index-menu {
     display: none;
   }
