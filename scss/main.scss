@@ -405,6 +405,10 @@ MENU STYLES
   display: none;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+
+  li a {
+    text-align: center;
+  }
 }
 
 .menu__toggle {
@@ -528,6 +532,12 @@ MENU STATES
   font-size: 3.2rem;
   font-weight: 700;
   text-transform: uppercase;
+  text-align: center;
+
+  img {
+    width: auto;
+    max-height: 100px;
+  }
 }
 
 @media screen and (min-width: 769px) {

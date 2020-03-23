@@ -343,6 +343,9 @@ MENU STYLES
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
+.menu__list li a {
+  text-align: center;
+}
 
 .menu__toggle {
   box-sizing: border-box;
@@ -461,6 +464,11 @@ MENU STATES
   font-size: 3.2rem;
   font-weight: 700;
   text-transform: uppercase;
+  text-align: center;
+}
+.menu__group img {
+  width: auto;
+  max-height: 100px;
 }
 
 @media screen and (min-width: 769px) {
