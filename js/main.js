@@ -46,23 +46,6 @@ $(".carousel-illustrations2").slick({
   arrows: false
 });
 
-
-$('.carousel-heads').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  fade: true,
-  asNavFor: '.carousel-heads-nav'
-});
-
-$('.carousel-heads-nav').slick({
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  asNavFor: '.carousel-heads',
-  centerMode: true,
-  focusOnSelect: true
-});
-
 $('.carousel-looks-nav').slick({
   slidesToShow: 11,
   slidesToScroll: 1,
