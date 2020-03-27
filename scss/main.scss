@@ -224,6 +224,16 @@ header {
 
 // Index
 
+.intro {
+  p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-right: 4%;
+}
+}
+
 body {
   background: $c-white url("../img/homepage-bg.jpg") repeat center 80px;
   background-size: 150%;
