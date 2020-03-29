@@ -602,6 +602,7 @@ MENU STATES
   margin: 0 auto;
   width: 30vw;
 }
+
 .project__video {
   margin-top: 1%;
 }
@@ -762,7 +763,7 @@ MENU STATES
   box-shadow: 5px 11px 9px 1px #ff0179;
 }
 .colorcards .carousel-looks-nav {
-  margin-top: 20px;
+  margin: 20px 0 30px;
 }
 .colorcards .carousel-looks-nav .slick-slide {
   height: 28vw;

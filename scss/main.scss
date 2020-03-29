@@ -685,16 +685,12 @@ MENU STATES
 .carousel-heads {
   margin: 0 auto;
   width: 30vw;
-
-  .slick-slide {
-  }
-  .slick-slide {
-  }
 }
 
-.carousel-heads-nav {
-  //margin-top: -10%;
-}
+// .carousel-heads-nav {
+//   margin-top: -10%;
+// }
+
 .project__video {
   margin-top: 1%;
   iframe {
@@ -861,8 +857,7 @@ MENU STATES
   }
 
   .carousel-looks-nav {
-    margin-top: 20px;
-    //z-index: -1;
+    margin: 20px 0 30px;   
 
     .slick-slide {
       height: 28vw;
