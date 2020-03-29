@@ -845,13 +845,14 @@ MENU STATES
   .carousel-looks {
     max-width: 400px;
     margin: 0 auto;
-    img {
+    .slick-list {
       box-shadow: 5px 11px 9px 1px $c-pink;
     }
   }
 
   .carousel-looks-nav {
-    height: 200px;
+    margin-top: 20px;
+    //z-index: -1;
 
     .slick-slide {
       height: 28vw;

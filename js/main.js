@@ -50,7 +50,6 @@ $('.carousel-looks-nav').slick({
   slidesToShow: 11,
   slidesToScroll: 1,
   asNavFor: '.carousel-looks',
-  centerMode: true,
   arrows: false,
   focusOnSelect: true
 });
@@ -60,7 +59,7 @@ $('.carousel-looks').slick({
   slidesToScroll: 1,
   arrows: false,
   fade: true,
-  asNavFor: '.carousel-looks-nav'
+  cssEase: 'linear'
 });
 
 $(".carousel-prints").slick({

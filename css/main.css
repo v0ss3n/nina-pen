@@ -750,11 +750,11 @@ MENU STATES
   max-width: 400px;
   margin: 0 auto;
 }
-.colorcards .carousel-looks img {
+.colorcards .carousel-looks .slick-list {
   box-shadow: 5px 11px 9px 1px #ff0179;
 }
 .colorcards .carousel-looks-nav {
-  height: 200px;
+  margin-top: 20px;
 }
 .colorcards .carousel-looks-nav .slick-slide {
   height: 28vw;
