@@ -137,7 +137,7 @@ a h2 {
   letter-spacing: 2px;
   white-space: nowrap;
   color: $c-palepurple;
-  text-shadow: 6px 9px 18px $c-ballpointblue, 1px 2px 0 $c-ballpointblue, 1px 3px 0 $c-ballpointblue--hover;;
+  text-shadow: 6px 9px 18px $c-ballpointblue, 1px 2px 0 $c-ballpointblue, 1px 3px 0 $c-ballpointblue--hover;
 }
 
 body {
@@ -225,13 +225,13 @@ header {
 // Index
 
 .intro {
+  .project {
+    border: none;
+    transform: none;
+  }
   p {
     margin: 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding-right: 4%;
-}
+  }
 }
 
 body {
@@ -407,6 +407,7 @@ MENU STYLES
   display: flex;
   align-items: flex-end;
   z-index: 2;
+  margin-bottom: 6vh;
 }
 
 .menu__list {
@@ -546,13 +547,22 @@ MENU STATES
 
   img {
     width: auto;
-    max-height: 100px;
+    max-height: 12vh;
   }
 }
 
 @media screen and (min-width: 769px) {
   .menu {
     display: none;
+  }
+
+  .intro {
+    p {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding-right: 4%;
+    }
   }
 }
 
@@ -1103,11 +1113,11 @@ MENU STATES
 
   h2 {
     color: $c-palepurple;
-    text-shadow: 6px 9px 18px $c-ballpointblue, 1px 2px 0 $c-ballpointblue, 1px 3px 0 $c-ballpointblue--hover;;
+    text-shadow: 6px 9px 18px $c-ballpointblue, 1px 2px 0 $c-ballpointblue, 1px 3px 0 $c-ballpointblue--hover;
   }
 
   .project {
-    padding: 4% 5% 5% 4%;  
+    padding: 4% 5% 5% 4%;
   }
 
   .shaking-button__img {
@@ -1262,6 +1272,14 @@ MENU STATES
   .hover-grid .overview-grid {
     img {
       width: 31%;
+    }
+  }
+
+  .intro {
+    img {
+      max-width: 400px;
+      margin: 0 auto;
+      display: block;
     }
   }
 

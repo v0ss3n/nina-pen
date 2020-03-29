@@ -187,12 +187,12 @@ header {
   border: 0;
 }
 
+.intro .project {
+  border: none;
+  transform: none;
+}
 .intro p {
   margin: 0;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding-right: 4%;
 }
 
 body {
@@ -342,6 +342,7 @@ MENU STYLES
   display: flex;
   align-items: flex-end;
   z-index: 2;
+  margin-bottom: 6vh;
 }
 
 .menu__list {
@@ -476,12 +477,19 @@ MENU STATES
 }
 .menu__group img {
   width: auto;
-  max-height: 100px;
+  max-height: 12vh;
 }
 
 @media screen and (min-width: 769px) {
   .menu {
     display: none;
+  }
+
+  .intro p {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-right: 4%;
   }
 }
 @media screen and (max-width: 769px) {
@@ -1093,6 +1101,12 @@ a h2,
 
   .hover-grid .overview-grid img {
     width: 31%;
+  }
+
+  .intro img {
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
   }
 
   .color {
