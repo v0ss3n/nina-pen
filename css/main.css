@@ -190,6 +190,7 @@ header {
 .intro .project {
   border: none;
   transform: none;
+  box-shadow: 0px 0px 20px 20px #fff;
 }
 .intro p {
   margin: 0;
